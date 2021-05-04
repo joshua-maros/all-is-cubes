@@ -600,16 +600,9 @@ impl Chunk {
         let tess_option = &mut self.tess;
         let new_triangulation = &self.triangulation;
 
-        // TODO: Theoretically, we should be able to reuse an existing vertex buffer that's too
-        // large, or even an index buffer that's too large via degenerate triangles.
-        // In practice, doing so seems to end up drawing some invalid vertices but only under
-        // luminance-webgl, and the copy_from_slice _doesn't report a length mismatch_,
-        // suggesting there's a subtle bug somewhere in our code (but how?), luminance, or rustc.
         let existing_tess_size_ok = if let Some(tess) = tess_option.as_ref() {
             tess.vert_nb() == new_triangulation.vertices().len()
                 && old_indices_len == new_triangulation.indices().len()
-                // TODO: workaround for https://github.com/phaazon/luminance-rs/issues/483
-                && !cfg!(target_arch = "wasm32")
         } else {
             false
         };
@@ -647,20 +640,14 @@ impl Chunk {
     }
 
     fn depth_sort_for_view(&mut self, view_position: Point3<FreeCoordinate>) {
-        // Disable dynamic depth sorting because luminance bug
-        // https://github.com/phaazon/luminance-rs/issues/483
-        // means indices_mut() can fail and corrupt other buffers.
-        // TODO: Reenble this and also in-place chunk updating when bug is fixed
-        if !cfg!(target_arch = "wasm32") {
-            let range = self.triangulation.transparent_range(DepthOrdering::Within);
-            if !range.is_empty() {
-                if let Some(tess) = &mut self.tess {
-                    self.triangulation
-                        .depth_sort_for_view(view_position.map(|s| s as f32));
-                    tess.indices_mut()
-                        .expect("failed to map indices for depth sorting")[range.clone()]
-                    .copy_from_slice(&self.triangulation.indices()[range]);
-                }
+        let range = self.triangulation.transparent_range(DepthOrdering::Within);
+        if !range.is_empty() {
+            if let Some(tess) = &mut self.tess {
+                self.triangulation
+                    .depth_sort_for_view(view_position.map(|s| s as f32));
+                tess.indices_mut()
+                    .expect("failed to map indices for depth sorting")[range.clone()]
+                .copy_from_slice(&self.triangulation.indices()[range]);
             }
         }
     }
