@@ -979,8 +979,7 @@ dependencies = [
 [[package]]
 name = "luminance"
 version = "0.44.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "20b470035d9a1c13d8f4f0cf5c012ba522d1232ecce827fa902574ea634f314d"
+source = "git+https://github.com/phaazon/luminance-rs.git?branch=fix/483-webgl-index-buffer-corruption#e3c1628819a6835a26a1b696975f49ff62c06701"
 dependencies = [
  "luminance-derive",
 ]
@@ -988,8 +987,7 @@ dependencies = [
 [[package]]
 name = "luminance-derive"
 version = "0.7.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "97db4ceb9146d9aacead014908de3d0cd391bf042b50e63e1ab00e14c3a8709e"
+source = "git+https://github.com/phaazon/luminance-rs.git?branch=fix/483-webgl-index-buffer-corruption#e3c1628819a6835a26a1b696975f49ff62c06701"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -999,8 +997,7 @@ dependencies = [
 [[package]]
 name = "luminance-front"
 version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1ce549e34476b6495b2d6f993ce28c356e0d2a66c25cf39ab488a58d19688516"
+source = "git+https://github.com/phaazon/luminance-rs.git?branch=fix/483-webgl-index-buffer-corruption#e3c1628819a6835a26a1b696975f49ff62c06701"
 dependencies = [
  "luminance",
  "luminance-gl",
@@ -1010,8 +1007,7 @@ dependencies = [
 [[package]]
 name = "luminance-gl"
 version = "0.17.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cf778578a4afbd0d61c6d807bc4ab88b502f40383bd1fa1ad9bf6bd31dade8b8"
+source = "git+https://github.com/phaazon/luminance-rs.git?branch=fix/483-webgl-index-buffer-corruption#e3c1628819a6835a26a1b696975f49ff62c06701"
 dependencies = [
  "gl",
  "luminance",
@@ -1020,8 +1016,7 @@ dependencies = [
 [[package]]
 name = "luminance-glfw"
 version = "0.16.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ba8c0f17ac19a7b2b92d1465ac0859039e937e1aa65b9d1252d438575d6e65e1"
+source = "git+https://github.com/phaazon/luminance-rs.git?branch=fix/483-webgl-index-buffer-corruption#e3c1628819a6835a26a1b696975f49ff62c06701"
 dependencies = [
  "gl",
  "glfw",
@@ -1033,8 +1028,7 @@ dependencies = [
 [[package]]
 name = "luminance-web-sys"
 version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "73be32de8d9a1641a465f6b83b85765b9892611871a2c8a940589107bc3c90b6"
+source = "git+https://github.com/phaazon/luminance-rs.git?branch=fix/483-webgl-index-buffer-corruption#e3c1628819a6835a26a1b696975f49ff62c06701"
 dependencies = [
  "luminance",
  "luminance-webgl",
@@ -1046,8 +1040,7 @@ dependencies = [
 [[package]]
 name = "luminance-webgl"
 version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1c43d540b33973a0e40654d4db12159f9a214e3d339da89354e06cd8bcd532df"
+source = "git+https://github.com/phaazon/luminance-rs.git?branch=fix/483-webgl-index-buffer-corruption#e3c1628819a6835a26a1b696975f49ff62c06701"
 dependencies = [
  "js-sys",
  "luminance",
@@ -1060,8 +1053,7 @@ dependencies = [
 [[package]]
 name = "luminance-windowing"
 version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "11704e4e6131156444a2208f38ad3bc936a183a38f6c32073db6de880a5cb488"
+source = "git+https://github.com/phaazon/luminance-rs.git?branch=fix/483-webgl-index-buffer-corruption#e3c1628819a6835a26a1b696975f49ff62c06701"
 dependencies = [
  "luminance",
 ]

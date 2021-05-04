@@ -26,3 +26,13 @@ overflow-checks = true
 
 [profile.bench]
 overflow-checks = true
+
+[patch.crates-io]
+luminance = { git = "https://github.com/phaazon/luminance-rs.git", branch = "fix/483-webgl-index-buffer-corruption" }
+luminance-derive = { git = "https://github.com/phaazon/luminance-rs.git", branch = "fix/483-webgl-index-buffer-corruption" }
+luminance-gl = { git = "https://github.com/phaazon/luminance-rs.git", branch = "fix/483-webgl-index-buffer-corruption" }
+luminance-glfw = { git = "https://github.com/phaazon/luminance-rs.git", branch = "fix/483-webgl-index-buffer-corruption" }
+luminance-front = { git = "https://github.com/phaazon/luminance-rs.git", branch = "fix/483-webgl-index-buffer-corruption" }
+luminance-web-sys = { git = "https://github.com/phaazon/luminance-rs.git", branch = "fix/483-webgl-index-buffer-corruption" }
+luminance-webgl = { git = "https://github.com/phaazon/luminance-rs.git", branch = "fix/483-webgl-index-buffer-corruption" }
+luminance-windowing = { git = "https://github.com/phaazon/luminance-rs.git", branch = "fix/483-webgl-index-buffer-corruption" }
